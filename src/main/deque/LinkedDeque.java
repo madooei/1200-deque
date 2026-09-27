@@ -73,16 +73,13 @@ public class LinkedDeque<T> implements Deque<T> {
 
   // Pre: before and after are neighbors, with before.next == after.
   private void insertBetween(T value, Node<T> before, Node<T> after) {
-    Node<T> node = new Node<>(value);
-    node.prev = before;
-    node.next = after;
-    before.next = node;
-    after.prev = node;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Pre: target is a real node, never a sentinel.
   private void removeNode(Node<T> target) {
-    target.prev.next = target.next;
-    target.next.prev = target.prev;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 }

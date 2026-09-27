@@ -31,7 +31,8 @@ public class ArrayDeque<T> implements Deque<T> {
   // index. We add arr.length before taking the remainder because Java's % can
   // return a negative result: (0 - 1) % arr.length would be -1.
   private int before(int i) {
-    return (i + arr.length - 1) % arr.length;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
