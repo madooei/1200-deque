@@ -1,0 +1,99 @@
+package deque;
+
+import java.util.NoSuchElementException;
+
+/**
+ * A node-backed implementation of the Deque ADT.
+ *
+ * @param <T> the type of elements in this deque.
+ */
+public class LinkedDeque<T> implements Deque<T> {
+
+  private final Node<T> head;  // front sentinel
+  private final Node<T> tail;  // back sentinel
+
+  private static class Node<T> {
+    T value;
+    Node<T> prev;
+    Node<T> next;
+
+    Node(T value) {
+      this.value = value;
+    }
+  }
+
+  public LinkedDeque() {
+    head = new Node<>(null);
+    tail = new Node<>(null);
+    head.next = tail;
+    tail.prev = head;
+  }
+
+  @Override
+  public void addFirst(T item) {
+    if (item == null) {
+      throw new IllegalArgumentException();
+    }
+    insertBetween(item, head, head.next);
+  }
+
+  @Override
+  public void addLast(T item) {
+    if (item == null) {
+      throw new IllegalArgumentException();
+    }
+    insertBetween(item, tail.prev, tail);
+  }
+
+  @Override
+  public void removeFirst() {
+    if (isEmpty()) {
+      throw new NoSuchElementException();
+    }
+    removeNode(head.next);
+  }
+
+  @Override
+  public void removeLast() {
+    if (isEmpty()) {
+      throw new NoSuchElementException();
+    }
+    removeNode(tail.prev);
+  }
+
+  @Override
+  public T getFirst() {
+    if (isEmpty()) {
+      throw new NoSuchElementException();
+    }
+    return head.next.value;
+  }
+
+  @Override
+  public T getLast() {
+    if (isEmpty()) {
+      throw new NoSuchElementException();
+    }
+    return tail.prev.value;
+  }
+
+  @Override
+  public boolean isEmpty() {
+    return head.next == tail;
+  }
+
+  // Pre: before and after are neighbors, with before.next == after.
+  private void insertBetween(T value, Node<T> before, Node<T> after) {
+    Node<T> node = new Node<>(value);
+    node.prev = before;
+    node.next = after;
+    before.next = node;
+    after.prev = node;
+  }
+
+  // Pre: target is a real node, never a sentinel.
+  private void removeNode(Node<T> target) {
+    target.prev.next = target.next;
+    target.next.prev = target.prev;
+  }
+}
