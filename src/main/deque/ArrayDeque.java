@@ -36,68 +36,44 @@ public class ArrayDeque<T> implements Deque<T> {
 
   @Override
   public void addFirst(T item) {
-    if (item == null) {
-      throw new IllegalArgumentException();
-    }
-    if (size == arr.length) {
-      grow();  // out of room: make the backing array bigger first
-    }
-    // grow resets front to 0, so move front only after the possible grow.
-    front = before(front);
-    arr[front] = item;
-    size++;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public void addLast(T item) {
-    if (item == null) {
-      throw new IllegalArgumentException();
-    }
-    if (size == arr.length) {
-      grow();  // out of room: make the backing array bigger first
-    }
-    arr[index(size)] = item;
-    size++;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public void removeFirst() {
-    if (isEmpty()) {
-      throw new NoSuchElementException();
-    }
-    arr[front] = null;  // clear the slot so the object can be garbage collected
-    front = index(1);
-    size--;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public void removeLast() {
-    if (isEmpty()) {
-      throw new NoSuchElementException();
-    }
-    arr[index(size - 1)] = null;  // clear the slot so the object can be garbage collected
-    size--;                       // front stays where it is
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public T getFirst() {
-    if (isEmpty()) {
-      throw new NoSuchElementException();
-    }
-    return arr[front];
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public T getLast() {
-    if (isEmpty()) {
-      throw new NoSuchElementException();
-    }
-    return arr[index(size - 1)];
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public boolean isEmpty() {
-    return size == 0;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // bigger only ever holds T, so the cast is safe.

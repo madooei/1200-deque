@@ -31,55 +31,44 @@ public class LinkedDeque<T> implements Deque<T> {
 
   @Override
   public void addFirst(T item) {
-    if (item == null) {
-      throw new IllegalArgumentException();
-    }
-    insertBetween(item, head, head.next);
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public void addLast(T item) {
-    if (item == null) {
-      throw new IllegalArgumentException();
-    }
-    insertBetween(item, tail.prev, tail);
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public void removeFirst() {
-    if (isEmpty()) {
-      throw new NoSuchElementException();
-    }
-    removeNode(head.next);
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public void removeLast() {
-    if (isEmpty()) {
-      throw new NoSuchElementException();
-    }
-    removeNode(tail.prev);
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public T getFirst() {
-    if (isEmpty()) {
-      throw new NoSuchElementException();
-    }
-    return head.next.value;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public T getLast() {
-    if (isEmpty()) {
-      throw new NoSuchElementException();
-    }
-    return tail.prev.value;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public boolean isEmpty() {
-    return head.next == tail;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Pre: before and after are neighbors, with before.next == after.
