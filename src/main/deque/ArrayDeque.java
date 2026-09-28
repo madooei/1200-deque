@@ -10,15 +10,15 @@ import java.util.NoSuchElementException;
 public class ArrayDeque<T> implements Deque<T> {
 
   private T[] arr;    // the backing array, used as a circular array
-  private int front;  // the index of the first item
-  private int size;   // how many items are in the deque
+  private int front;
+  private int size;
 
   // arr only ever holds T, so the cast is safe.
   @SuppressWarnings("unchecked")
   public ArrayDeque() {
-    arr = (T[]) new Object[10];  // start with room for 10 items
-    front = 0;                   // the front starts at index 0
-    size = 0;                    // the deque starts empty
+    arr = (T[]) new Object[10];
+    front = 0;
+    size = 0;
   }
 
   // Turns an offset from the first end into an index into arr, wrapping
@@ -87,6 +87,6 @@ public class ArrayDeque<T> implements Deque<T> {
       bigger[i] = arr[index(i)];
     }
     arr = bigger;
-    front = 0;  // the items now start at the beginning of the new array
+    front = 0;
   }
 }
