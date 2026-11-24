@@ -40,7 +40,7 @@ code/
 - `scripts/test.sh deque.ArrayDequeTest` — compiles everything and runs only that test class. Use this while you are working on one class and the other is still empty.
 - `scripts/run.sh demo.ArrayDequeDemo` — compiles everything and runs that one demo. Every class you implement has its own demo, `<Class>Demo`.
 
-## What's here
+## Contents
 
 - `deque.Deque<T>` — the Deque contract: `addFirst`, `addLast`, `removeFirst`, `removeLast`, `getFirst`, `getLast`, and `isEmpty`.
 - `deque.LinkedDeque<T>` — the node-backed implementation, a doubly linked list with references to both ends.
